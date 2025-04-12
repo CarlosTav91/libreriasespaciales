@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Librerías de Python para Información Espacial</title>
+  <!-- Incluir Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Incluir Font Awesome para los iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Incluir Google Fonts para una tipografía llamativa -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      padding-top: 70px;
+      background: linear-gradient(#3d3d3d , #8e8d8d , #eeeeee);
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+    }
+    .card {
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .card-header {
+      cursor: pointer;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .icon {
+      font-size: 1.5rem;
+      transition: transform 0.2s;
+    }
+    .icon:hover {
+      transform: scale(1.2);
+    }
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    .navbar-nav li a.active {
+      font-weight: 700;
+      color: #FFD700 !important;
+    }
+    .btn-outline-secondary {
+      font-weight: 600;
+    }
+    .logo-placeholder {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .logo-placeholder img {
+      max-height: 100px;
+      object-fit: contain;
+    }
+    footer {
+      background-color: rgba(0,0,0,0.8);
+      color: #fff;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">InfoEspacial</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#geopandas">Geopandas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#shapely">Shapely</a></li>
+          <li class="nav-item"><a class="nav-link" href="#fiona">Fiona</a></li>
+          <li class="nav-item"><a class="nav-link" href="#rasterio">Rasterio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pyproj">Pyproj</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gdal">GDAL</a></li>
+          <li class="nav-item"><a class="nav-link" href="#folium">Folium</a></li>
+          <li class="nav-item"><a class="nav-link" href="#matplotlib">Matplotlib</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cartopy">Cartopy</a></li>
+          <li class="nav-item"><a class="nav-link" href="#geopy">Geopy</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="container">
+    <header class="mb-5 text-center text-white">
+      <h1>Librerías de Python para Información Espacial</h1>
+      <p class="lead">
+        Descubre las principales librerías utilizadas para trabajar con datos geoespaciales en Python,
+        sus funcionalidades, ejemplos de uso e instalación.
+      </p>
+    </header>
+
+    <!-- Tarjeta para Geopandas -->
+    <section id="geopandas">
+      <div class="card">
+        <div class="card-header bg-primary text-white" data-bs-toggle="collapse" data-bs-target="#info-geopandas">
+          <i class="fa-solid fa-map-marked-alt icon"></i>
+          <h5 class="mb-0">Geopandas</h5>
+        </div>
+        <div id="info-geopandas" class="collapse show">
+          <div class="card-body">
+            <!-- Espacio para logo o imagen -->
+            <div class="logo-placeholder">
+              <img src="imagenesweb/geopandas.png" alt="Logo de Geopandas" class="img-fluid">
+            </div>
+            <p><strong>Descripción:</strong> Extiende la funcionalidad de pandas para trabajar con datos espaciales mediante GeoDataFrames, facilitando la manipulación y análisis geográfico vectorial.</p>
+            <p><strong>Instalación:</strong> <code>pip install geopandas</code></p>
+            <p><strong>Más información:</strong> 
+              <a href="https://geopandas.org/" target="_blank">Documentación oficial</a>.
+            </p>
+            <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#more-geopandas">
+              Leer más
+            </button>
+            <div class="collapse mt-3" id="more-geopandas">
+              <p>Facilita operaciones como uniones espaciales, cálculos de áreas, distancias y reproyecciones, convirtiéndose en una herramienta esencial para análisis geoespacial.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tarjeta para Shapely -->
+    <section id="shapely">
+      <div class="card">
+        <div class="card-header bg-success text-white" data-bs-toggle="collapse" data-bs-target="#info-shapely">
+          <i class="fa-solid fa-shapes icon"></i>
+          <h5 class="mb-0">Shapely</h5>
+        </div>
+        <div id="info-shapely" class="collapse show">
+          <div class="card-body">
+            <div class="logo-placeholder">
+              <img src="imagenesweb/shapely.jpeg" alt="Logo de Shapely" class="img-fluid">
+            </div>
+            <p><strong>Descripción:</strong> Permite crear, manipular y analizar objetos geométricos como puntos, líneas y polígonos, ideal para operaciones geométricas y análisis espacial.</p>
+            <p><strong>Instalación:</strong> <code>pip install shapely</code></p>
+            <p><strong>Más información:</strong> 
+              <a href="https://shapely.readthedocs.io/en/stable/" target="_blank">Documentación oficial</a>.
+            </p>
+            <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#more-shapely">
+              Leer más
+            </button>
+            <div class="collapse mt-3" id="more-shapely">
+              <p>Se integra frecuentemente con otras librerías, como Geopandas, para realizar manipulaciones y análisis geométricos complejos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tarjeta para Fiona -->
+    <section id="fiona">
+      <div class="card">
+        <div class="card-header bg-warning text-dark" data-bs-toggle="collapse" data-bs-target="#info-fiona">
+          <i class="fa-solid fa-file-alt icon"></i>
+          <h5 class="mb-0">Fiona</h5>
+        </div>
+        <div id="info-fiona" class="collapse show">
+          <div class="card-body">
+            <div class="logo-placeholder">
+              <img src="imagenesweb/fiona.jpg" alt="Logo de Fiona" class="img-fluid">
+            </div>
+            <p><strong>Descripción:</strong> Especializada en la lectura y escritura de formatos de datos espaciales como Shapefiles y otros formatos vectoriales.</p>
+            <p><strong>Instalación:</strong> <code>pip install fiona</code></p>
+            <p><strong>Más información:</strong>
+              <a href="https://fiona.readthedocs.io/en/latest/" target="_blank">Documentación oficial</a>.
+            </p>
+            <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#more-fiona">
+              Leer más
+            </button>
+            <div class="collapse mt-3" id="more-fiona">
+              <p>Facilita la interoperabilidad entre diversos formatos espaciales, permitiendo que otras librerías (como Geopandas) trabajen con ellos sin complicaciones.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tarjeta para Rasterio -->
+    <section id="rasterio">
+      <div class="card">
+        <div class="card-header bg-danger text-white" data-bs-toggle="collapse" data-bs-target="#info-rasterio">
+          <i class="fa-solid fa-image icon"></i>
+          <h5 class="mb-0">Rasterio</h5>
+        </div>
+        <div id="info-rasterio" class="collapse show">
+          <div class="card-body">
+            <div class="logo-placeholder">
+              <img src="imagenesweb/rasterio.webp" alt="Logo de Rasterio" class="img-fluid">
+            </div>
+            <p><strong>Descripción:</strong> Diseñada para trabajar con datos raster como imágenes satelitales y archivos GeoTIFF, facilitando la lectura, escritura y procesamiento de datos de imagen geográfica.</p>
+            <p><strong>Instalación:</strong> <code>pip install rasterio</code></p>
+            <p><strong>Más información:</strong>
+              <a href="https://rasterio.readthedocs.io/en/latest/" target="_blank">Documentación oficial</a>.
+            </p>
+            <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#more-rasterio">
+              Leer más
+            </button>
+            <div class="collapse mt-3" id="more-rasterio">
+              <p>Permite trabajar con máscaras, recortes y reproyecciones, lo que resulta fundamental en teledetección y monitoreo ambiental.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tarjeta para Pyproj -->
+    <section id="pyproj">
+      <div class="card">
+        <div class="card-header bg-info text-white" data-bs-toggle="collapse" data-bs-target="#info-pyproj">
+          <i class="fa-solid fa-project-diagram icon"></i>
+          <h5 class="mb-0">Pyproj</h5>
+        </div>
+        <div id="info-pyproj" class="collapse show">
+          <div class="card-body">
+            <div class="logo-placeholder">
+              <img src="imagenesweb/pyproj.png" alt="Logo de Pyproj" class="img-fluid">
+            </div>
+            <p><strong>Descripción:</strong> Ofrece una interfaz para transformar coordenadas y gestionar proyecciones cartográficas, esencial para trabajar con distintos sistemas de referencia espacial.</p>
+            <p><strong>Instalación:</strong> <code>pip install pyproj</code></p>
+            <p><strong>Más información:</strong> 
+              <a href="https://pyproj4.github.io/pyproj/stable/" target="_blank">Documentación oficial</a>.
+            </p>
+            <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#more-pyproj">
+              Leer más
+            </button>
+            <div class="collapse mt-3" id="more-pyproj">
+              <p>Permite realizar conversiones precisas entre distintos sistemas de coordenadas, facilitando la integración de datos geográficos diversos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tarjeta para GDAL -->
+    <section id="gdal">
+      <div class="card">
+        <div class="card-header bg-secondary text-white" data-bs-toggle="collapse" data-bs-target="#info-gdal">
+          <i class="fa-solid fa-database icon"></i>
+          <h5 class="mb-0">GDAL</h5>
+        </div>
+        <div id="info-gdal" class="collapse show">
+          <div class="card-body">
+            <div class="logo-placeholder">
+              <img src="imagenesweb/gdal.png" alt="Logo de GDAL" class="img-fluid">
+            </div>
+            <p><strong>Descripción:</strong> Una biblioteca robusta que soporta numerosos formatos de datos raster y vectoriales, sirviendo de base para múltiples herramientas geoespaciales.</p>
+            <p><strong>Instalación:</strong> Se recomienda <code>conda install -c conda-forge gdal</code> o una compilación directa.</p>
+            <p><strong>Más información:</strong> 
+              <a href="https://gdal.org/" target="_blank">Documentación oficial</a>.
+            </p>
+            <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#more-gdal">
+              Leer más
+            </button>
+            <div class="collapse mt-3" id="more-gdal">
+              <p>Es fundamental para flujos de trabajo complejos en SIG, permitiendo la interoperabilidad entre múltiples formatos geoespaciales.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tarjeta para Folium -->
+    <section id="folium">
+      <div class="card">
+        <div class="card-header bg-dark text-white" data-bs-toggle="collapse" data-bs-target="#info-folium">
+          <i class="fa-solid fa-globe icon"></i>
+          <h5 class="mb-0">Folium</h5>
+        </div>
+        <div id="info-folium" class="collapse show">
+          <div class="card-body">
+            <div class="logo-placeholder">
+              <img src="imagenesweb/folium.png" alt="Logo de Folium" class="img-fluid">
+            </div>
+            <p><strong>Descripción:</strong> Permite la creación de mapas interactivos basados en Leaflet.js directamente desde Python, ideal para aplicaciones web y notebooks.</p>
+            <p><strong>Instalación:</strong> <code>pip install folium</code></p>
+            <p><strong>Más información:</strong> 
+              <a href="https://python-visualization.github.io/folium/" target="_blank">Documentación oficial</a>.
+            </p>
+            <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#more-folium">
+              Leer más
+            </button>
+            <div class="collapse mt-3" id="more-folium">
+              <p>Facilita la integración de capas, marcadores y ventanas emergentes, creando una experiencia interactiva para la visualización de datos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tarjeta para Matplotlib -->
+    <section id="matplotlib">
+      <div class="card">
+        <div class="card-header bg-primary text-white" data-bs-toggle="collapse" data-bs-target="#info-matplotlib">
+          <i class="fa-solid fa-chart-line icon"></i>
+          <h5 class="mb-0">Matplotlib</h5>
+        </div>
+        <div id="info-matplotlib" class="collapse show">
+          <div class="card-body">
+            <div class="logo-placeholder">
+              <img src="imagenesweb/mtpl.png" alt="Logo de Matplotlib" class="img-fluid">
+            </div>
+            <p><strong>Descripción:</strong> Una librería de gráficos general que, integrada con otras herramientas, permite crear visualizaciones y mapas estáticos de alta calidad.</p>
+            <p><strong>Instalación:</strong> <code>pip install matplotlib</code></p>
+            <p><strong>Más información:</strong>
+              <a href="https://matplotlib.org/" target="_blank">Documentación oficial</a>.
+            </p>
+            <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#more-matplotlib">
+              Leer más
+            </button>
+            <div class="collapse mt-3" id="more-matplotlib">
+              <p>Ideal para combinar gráficos estadísticos con mapas, ofreciendo personalización para presentaciones académicas y profesionales.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tarjeta para Cartopy -->
+    <section id="cartopy">
+      <div class="card">
+        <div class="card-header bg-success text-white" data-bs-toggle="collapse" data-bs-target="#info-cartopy">
+          <i class="fa-solid fa-map icon"></i>
+          <h5 class="mb-0">Cartopy</h5>
+        </div>
+        <div id="info-cartopy" class="collapse show">
+          <div class="card-body">
+            <div class="logo-placeholder">
+              <img src="imagenesweb/cartopy.png" alt="Logo de Cartopy" class="img-fluid">
+            </div>
+            <p><strong>Descripción:</strong> Especializada en la creación de mapas científicos y análisis avanzado, es muy utilizada en meteorología y estudios ambientales.</p>
+            <p><strong>Instalación:</strong> <code>pip install cartopy</code> (puede requerir dependencias adicionales)</p>
+            <p><strong>Más información:</strong>
+              <a href="https://scitools.org.uk/cartopy/docs/latest/" target="_blank">Documentación oficial</a>.
+            </p>
+            <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#more-cartopy">
+              Leer más
+            </button>
+            <div class="collapse mt-3" id="more-cartopy">
+              <p>Ofrece potentes herramientas para análisis y visualización geográfica en proyectos científicos, permitiendo representaciones personalizadas y precisas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tarjeta para Geopy -->
+    <section id="geopy">
+      <div class="card">
+        <div class="card-header bg-warning text-dark" data-bs-toggle="collapse" data-bs-target="#info-geopy">
+          <i class="fa-solid fa-location-dot icon"></i>
+          <h5 class="mb-0">Geopy</h5>
+        </div>
+        <div id="info-geopy" class="collapse show">
+          <div class="card-body">
+            <div class="logo-placeholder">
+              <img src="imagenesweb/geopy.webp" alt="Logo de Geopy" class="img-fluid">
+            </div>
+            <p><strong>Descripción:</strong> Proporciona funciones para geocodificación, cálculo de distancias y determinación de ubicaciones basadas en coordenadas, facilitando la integración en aplicaciones de geolocalización.</p>
+            <p><strong>Instalación:</strong> <code>pip install geopy</code></p>
+            <p><strong>Más información:</strong>
+              <a href="https://geopy.readthedocs.io/en/stable/" target="_blank">Documentación oficial</a>.
+            </p>
+            <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#more-geopy">
+              Leer más
+            </button>
+            <div class="collapse mt-3" id="more-geopy">
+              <p>Es útil para integrar datos de ubicación en tiempo real y realizar cálculos precisos entre puntos geográficos, complementando otros análisis espaciales.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div> <!-- Fin del contenedor principal -->
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p>Creado por Carlos Tavera</p>
+      <p>Información oficial de cada sitio. No tiene fines lucrativos, solo fines académicos.</p>
+    </div>
+  </footer>
+
+  <!-- Incluir Bootstrap 5 y dependencias JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Resaltar el enlace del menú según la sección visible
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.navbar-nav li a');
+
+    window.addEventListener('scroll', () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 60) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
